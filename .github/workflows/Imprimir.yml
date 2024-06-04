@@ -1,13 +1,13 @@
 name: ejemplo
 
 on:
-  schedule:
-    - cron: '00 0 * * *' # Runs every day at 00:00 UTC
+ # schedule:
+  #  - cron: '00 0 * * *' # Runs every day at 00:00 UTC
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  check_earnings:
-    runs-on: ubuntu-latest
+  check_earnings: #you,1 hour ago*un nuevo action
+    runs-on: ubuntu-latest  #PUEDES ELEGIR EL TIPO DE OS DONDE CORRER LO QUE CREO
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
