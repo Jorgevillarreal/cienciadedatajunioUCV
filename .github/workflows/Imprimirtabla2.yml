@@ -1,0 +1,25 @@
+name: Imprimir nombres 
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # Runs every day at 00:00 UTC
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  check_earnings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: imprimir tala bruta y neta
+        run: |
+          echo "tabla desde la fuente"
+          cat Datos.csv
+          echo "filtrando datos"
+          grep -iv gmail Datos.csv > datos_filtrados.csv
